@@ -1,10 +1,51 @@
 # NSL Sign Language Recognition - LSTM Model
 
-Real-time NSL (Numeric Sign Language) recognition using LSTM neural networks and modern web interface.
+Real-time NSL (Numeric Sign Language) recognition using LSTM neural networks and modern web interface with hand detection.
 
 ## 🎯 Project Overview
 
 This project uses a hybrid CNN-LSTM architecture to recognize American Sign Language (ASL) numeric signs (0-35) through an intuitive web interface. The model achieved **99.83% accuracy** on the test dataset!
+
+## 🛠️ Setup Instructions
+
+### Prerequisites
+- Python 3.11+
+- Git
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/umnga/Sanket.git
+   cd Sanket
+   ```
+
+2. **Create virtual environment**
+   ```bash
+   python3 -m venv nsl_clean_env
+   source nsl_clean_env/bin/activate  # On macOS/Linux
+   ```
+
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Download the dataset and models**
+   - Dataset: Download the NSL dataset and place it in `nslDataset/` directory
+   - Models: Download the trained models (.h5 files) and place them in `models/` directory
+   - Note: Large files are excluded from this repository for size constraints
+
+5. **Run the application**
+   ```bash
+   streamlit run streamlit_app.py
+   ```
+
+### Features Added
+- ✨ **Hand Detection**: Automatically detects and crops hand regions using MediaPipe
+- 🎯 **Smart Cropping**: Focuses on hand area for better predictions
+- 💡 **Visual Feedback**: Shows detected hand regions with bounding boxes
+- 🔄 **Fallback Mode**: Uses full image if no hand is detected
 
 ## 📁 Project Structure
 
